@@ -1,3 +1,5 @@
+package com.tw.fourBall;
+
 import processing.core.PApplet;
 
 public class TryProcessing extends PApplet {
@@ -15,7 +17,8 @@ public class TryProcessing extends PApplet {
     private float ballAtX4 = 0;
 
     public static void main(String[] args) {
-        PApplet.main("TryProcessing", args);
+        PApplet.main("com.tw.fourBall.TryProcessing", args);
+
     }
 
     @Override
@@ -25,14 +28,17 @@ public class TryProcessing extends PApplet {
 
     @Override
     public void draw() {
-        background(128);
-        ellipse(ballAtX1, ballAtY1, CIRCLE_DIA, CIRCLE_DIA);
-        ellipse(ballAtX2, ballAtY2, CIRCLE_DIA, CIRCLE_DIA);
-        ellipse(ballAtX3, ballAtY3, CIRCLE_DIA, CIRCLE_DIA);
-        ellipse(ballAtX4, ballAtY4, CIRCLE_DIA, CIRCLE_DIA);
+        getCirce(ballAtX1, ballAtY1);
+        getCirce(ballAtX2, ballAtY2);
+        getCirce(ballAtX3, ballAtY3);
+        getCirce(ballAtX4, ballAtY4);
         ballAtX1 += 1;
         ballAtX2 += 2;
         ballAtX3 += 3;
         ballAtX4 += 4;
+    }
+
+    private void getCirce(float ballAtX, float ballAtY) {
+        ellipse(ballAtX, ballAtY, CIRCLE_DIA, CIRCLE_DIA);
     }
 }
